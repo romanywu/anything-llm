@@ -63,6 +63,7 @@ const PromptReply = ({
     <div
       key={uuid}
       className={`flex justify-center items-end w-full ${assistantBackgroundColor}`}
+      data-message-role="assistant"
     >
       <div className="py-8 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col">
         <div className="flex gap-x-5">

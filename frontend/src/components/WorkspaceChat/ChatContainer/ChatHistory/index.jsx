@@ -16,6 +16,8 @@ import useTextSize from "@/hooks/useTextSize";
 import { v4 } from "uuid";
 import { useTranslation } from "react-i18next";
 import { useChatMessageAlignment } from "@/hooks/useChatMessageAlignment";
+import { useTextSelection } from "@/hooks/useTextSelection";
+import FollowUpButton from "../../../FollowUpButton";
 
 export default function ChatHistory({
   history = [],
@@ -37,6 +39,7 @@ export default function ChatHistory({
   const { showScrollbar } = Appearance.getSettings();
   const { textSizeClass } = useTextSize();
   const { getMessageAlignment } = useChatMessageAlignment();
+  const { selection, clearSelection } = useTextSelection();
 
   useEffect(() => {
     if (!isUserScrolling && (isAtBottom || isStreaming)) {
@@ -252,6 +255,7 @@ export default function ChatHistory({
           </div>
         </div>
       )}
+      <FollowUpButton selection={selection} onFollowUp={clearSelection} />
     </div>
   );
 }

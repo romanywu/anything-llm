@@ -86,6 +86,7 @@ const HistoricalMessage = ({
       className={`${
         isDeleted ? "animate-remove" : ""
       } flex justify-center items-end w-full group bg-theme-bg-chat`}
+      data-message-role={role}
     >
       <div className="py-8 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col">
         <div className={`flex gap-x-5 ${alignmentCls}`}>
